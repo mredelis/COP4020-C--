@@ -2,8 +2,10 @@
 #include "student.h"
 #include "batsman.h"
 
+#include "rectangle.h"
 #include "complex.h"
 #include "distance.h"
+#include "time.h"
 
 using namespace std;
 
@@ -19,6 +21,41 @@ int main()
     Batsman myBatsman;
     myBatsman.readData(1234, "Otani", 6, 4, 3);
     myBatsman.displayData();
+
+    cout << "========== Exercise 7 ==========" << endl;
+    Rectangle r1, r2;
+    r1.setlength(5);
+    r1.setwidth(2.5);
+    r2.setlength(5);
+    r2.setwidth(18.9);
+
+    cout << "First Rectangle: " << endl;
+    r1.show();
+    cout << "Area: " << r1.area() << " Perimeter: " << r1.perimeter() << endl;
+
+    cout << "Second Rectangle: " << endl;
+    r2.show();
+    cout << "Area: " << r2.area() << " Perimeter: " << r2.perimeter() << endl;
+
+    cout << endl;
+    string result = (r1.sameArea(r2) == 1) ? "the same" : "different";
+    cout << "The area of the rectangles is " << result << endl;
+
+    cout << endl;
+    cout << "Exercise 7 Second Part" << endl;
+    cout << "First Rectangle: " << endl;
+    r1.setlength(15);
+    r1.setwidth(6.3);
+    r1.show();
+    cout << "Area: " << r1.area() << " Perimeter: " << r1.perimeter() << endl;
+
+    cout << "Second Rectangle: " << endl;
+    r2.show();
+    cout << "Area: " << r2.area() << " Perimeter: " << r2.perimeter() << endl;
+
+    cout << endl;
+    result = (r1.sameArea(r2) == 1) ? "the same" : "different";
+    cout << "The area of the new rectangles is " << result << endl;
 
     cout << "========== Exercise 8 ==========" << endl;
     Complex c1, c2, c3;
@@ -45,6 +82,19 @@ int main()
     d2.disp();
     cout << "Distance 3 = Distance 1 + Distance 2:" << endl;
     d3.disp();
+
+    cout << "========== Exercise 10 ==========" << endl;
+    Time t1, t2, t3;
+    t1.settime(10, 50);
+    t2.settime(15, 40);
+    t3 = t1.sum(t2);
+
+    cout << "Time 1:" << endl;
+    t1.showtime();
+    cout << "Time 2:" << endl;
+    t2.showtime();
+    cout << "Time 3 = Time 1 + Time 2:" << endl;
+    t3.showtime();
 
     return 0;
 }
