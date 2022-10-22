@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void student::takeData(int admno, const char sname[], float eng, float math, float science)
+void Student::takeData(int admno, const char sname[], float eng, float math, float science)
 {
     this->admno = admno;
     strcpy(this->sname, sname);
@@ -14,7 +14,7 @@ void student::takeData(int admno, const char sname[], float eng, float math, flo
     this->total = ctotal();
 }
 
-void student::showData()
+void Student::showData()
 {
     cout << "Student admno  : " << admno << endl;
     cout << "Student name   : " << sname << endl;
@@ -24,7 +24,7 @@ void student::showData()
     cout << "Student total  : " << total << endl;
 }
 
-float student::ctotal()
+float Student::ctotal()
 {
     return eng + math + science;
 }
