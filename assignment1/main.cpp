@@ -2,6 +2,7 @@
 #include "student.h"
 #include "batsman.h"
 
+#include "report.h"
 #include "rectangle.h"
 #include "complex.h"
 #include "distance.h"
@@ -11,9 +12,8 @@ using namespace std;
 
 int main()
 {
-    Student myStudent;
-
     cout << "========== Exercise 1 ==========" << endl;
+    Student myStudent;
     myStudent.takeData(35, "Lindsay", 3, 4, 5);
     myStudent.showData();
 
@@ -21,6 +21,12 @@ int main()
     Batsman myBatsman;
     myBatsman.readData(1234, "Otani", 6, 4, 3);
     myBatsman.displayData();
+
+    cout << "========== Exercise 6 ==========" << endl;
+    Report rep;
+    float mark[5] = {5.0, 4.2, 3.3, 3.1, 4.5};
+    rep.READINFO(5465, "Edel", mark);
+    rep.DISPLAYINFO();
 
     cout << "========== Exercise 7 ==========" << endl;
     Rectangle r1, r2;
