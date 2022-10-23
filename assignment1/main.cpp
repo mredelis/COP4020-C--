@@ -2,6 +2,7 @@
 #include "student.h"
 #include "batsman.h"
 #include "test.h"
+#include "flight.h"
 
 #include "report.h"
 #include "rectangle.h"
@@ -13,34 +14,45 @@ using namespace std;
 
 int main()
 {
-    cout << "========== Exercise 1 ==========" << endl;
+    cout << endl
+         << "========== Exercise 1 ==========" << endl;
     Student myStudent;
     myStudent.takeData(35, "Lindsay", 3, 4, 5);
     myStudent.showData();
 
-    cout << "========== Exercise 2 ==========" << endl;
+    cout << endl
+         << "========== Exercise 2 ==========" << endl;
     Batsman myBatsman;
     myBatsman.readData(1234, "Otani", 6, 4, 3);
     myBatsman.displayData();
 
-    cout << "========== Exercise 3 ==========" << endl;
+    cout << endl
+         << "========== Exercise 3 ==========" << endl;
     Test myTest;
     myTest.SCHEDULE();
     myTest.DISPTEST();
-    cout << endl;
 
-    cout << "========== Exercise 6 ==========" << endl;
+    cout << endl
+         << "========== Exercise 4 ==========" << endl;
+    Flight myFlight;
+    myFlight.FEEDINFO();
+    myFlight.SHOWINFO();
+
+    cout << endl
+         << "========== Exercise 6 ==========" << endl;
     Report rep;
     float mark[5] = {5.0, 4.2, 3.3, 3.1, 4.5};
     rep.READINFO(5465, "Edel", mark);
     rep.DISPLAYINFO();
 
-    cout << "========== Exercise 7 ==========" << endl;
+    cout << endl
+         << "========== Exercise 7 ==========" << endl;
     Rectangle r1, r2;
     r1.setlength(5);
     r1.setwidth(2.5);
     r2.setlength(5);
     r2.setwidth(18.9);
+    cout << endl;
 
     cout << "First Rectangle: " << endl;
     r1.show();
@@ -70,7 +82,8 @@ int main()
     result = (r1.sameArea(r2) == 1) ? "the same" : "different";
     cout << "The area of the new rectangles is " << result << endl;
 
-    cout << "========== Exercise 8 ==========" << endl;
+    cout << endl
+         << "========== Exercise 8 ==========" << endl;
     Complex c1, c2, c3;
     c1.set(4, 2);
     c2.set(5, 1);
@@ -83,7 +96,8 @@ int main()
     cout << "Complex number 3 = Complex 1 + Complex 2:" << endl;
     c3.disp();
 
-    cout << "========== Exercise 9 ==========" << endl;
+    cout << endl
+         << "========== Exercise 9 ==========" << endl;
     Distance d1, d2, d3;
     d1.set(5, 4);
     d2.set(9, 20);
@@ -96,7 +110,8 @@ int main()
     cout << "Distance 3 = Distance 1 + Distance 2:" << endl;
     d3.disp();
 
-    cout << "========== Exercise 10 ==========" << endl;
+    cout << endl
+         << "========== Exercise 10 ==========" << endl;
     Time t1, t2, t3;
     t1.settime(10, 50);
     t2.settime(15, 40);
