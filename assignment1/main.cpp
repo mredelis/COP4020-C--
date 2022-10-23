@@ -3,7 +3,7 @@
 #include "batsman.h"
 #include "test.h"
 #include "flight.h"
-
+#include "book.h"
 #include "report.h"
 #include "rectangle.h"
 #include "complex.h"
@@ -37,6 +37,12 @@ int main()
     Flight myFlight;
     myFlight.FEEDINFO();
     myFlight.SHOWINFO();
+
+    cout << endl
+         << "========== Exercise 5 ==========" << endl;
+    Book myBook;
+    myBook.INPUT(13, "Love in the time of cholera", 12.5);
+    myBook.PURCHASE();
 
     cout << endl
          << "========== Exercise 6 ==========" << endl;
