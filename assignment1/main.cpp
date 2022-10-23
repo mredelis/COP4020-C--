@@ -1,6 +1,7 @@
 #include <iostream>
 #include "student.h"
 #include "batsman.h"
+#include "test.h"
 
 #include "report.h"
 #include "rectangle.h"
@@ -21,6 +22,12 @@ int main()
     Batsman myBatsman;
     myBatsman.readData(1234, "Otani", 6, 4, 3);
     myBatsman.displayData();
+
+    cout << "========== Exercise 3 ==========" << endl;
+    Test myTest;
+    myTest.SCHEDULE();
+    myTest.DISPTEST();
+    cout << endl;
 
     cout << "========== Exercise 6 ==========" << endl;
     Report rep;
