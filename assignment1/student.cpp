@@ -1,7 +1,5 @@
 #include "student.h"
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 void Student::takeData(int admno, const char sname[], float eng, float math, float science)

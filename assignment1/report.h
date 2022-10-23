@@ -1,8 +1,3 @@
-#include <string.h>
-#include <algorithm>
-#include <iostream>
-using namespace std;
-
 class Report
 {
 private:

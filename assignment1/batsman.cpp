@@ -1,7 +1,5 @@
 #include "batsman.h"
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 void Batsman::readData(int bcode, const char bname[], int innings, int notout, int runs)

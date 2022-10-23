@@ -1,5 +1,3 @@
-#include <string.h>
-#include <algorithm>
 #include <iostream>
 #include "report.h"
 using namespace std;
@@ -12,7 +10,6 @@ void Report::READINFO(int adno, const char name[], float marks[])
     {
         this->marks[i] = marks[i];
     }
-
     average = GETAVG();
 }
 
