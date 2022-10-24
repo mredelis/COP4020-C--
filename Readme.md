@@ -1,4 +1,4 @@
-Each cpp file is compiled to a separate object (.o) file. Then the two object files are "linked" together to create the executable. With the above command the object files are deleted after they are linked into the executable, so you won't see them.
+Each cpp file is compiled to a separate object (.o) file. Then the two object files are "linked" together to create the executable. With the below command the object files are deleted after they are linked into the executable, so you won't see them.
 
 `g++ -std=c++17 -Wall -Wextra -pedantic program implementation`
 
