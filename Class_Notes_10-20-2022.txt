@@ -1,0 +1,380 @@
+Cuboid ////////////
+
+#pragma once
+
+#include "Rectangle.h"
+
+class Cuboid : public Rectangle
+{
+private:
+	int z;
+
+public:
+	Cuboid(int z);
+	int getZ();
+	void setZ(int z);
+	int volume();
+	void display();
+
+};
+
+#include <iostream>
+using namespace std;
+
+#include "Cuboid.h"
+
+Cuboid::Cuboid(int z)
+{
+	this->z = z;
+}
+
+int Cuboid::getZ()
+{
+	return z;
+}
+
+void Cuboid::setZ(int z)
+{
+	this->z = z;
+}
+
+int Cuboid::volume()
+{
+	return z * getWidth() * getHeight();
+}
+
+void Cuboid::display()
+{
+	cout << "Volume is " << volume() << endl;
+}
+
+1. /////////////////
+
+#include <iostream>
+using namespace std;
+
+#include "Multiples.h"
+
+int main()
+{
+	Multiples m;
+	m.setLimit(1000);
+	m.displaySolution();
+
+}
+
+#pragma once
+
+#include <iostream>
+using namespace std;
+
+class Multiples
+{
+private:
+	int value1, value2, limit;
+
+public:
+	Multiples();
+	Multiples(int value1, int value2);
+
+	void setValue1(int value1);
+	void setValue2(int value2);
+	void setLimit(int limit);
+
+	int solve();
+	void displaySolution();
+
+};
+
+#include "Multiples.h"
+
+Multiples::Multiples()
+{
+	value1 = 3;
+	value2 = 5;
+	limit = 10;
+}
+
+Multiples::Multiples(int value1, int value2)
+{
+	this->value1 = value1;
+	this->value2 = value2;
+	limit = 10;
+}
+
+void Multiples::setValue1(int value1)
+{
+	this->value1 = value1;
+}
+
+void Multiples::setValue2(int value2)
+{
+	this->value2 = value2;
+}
+
+void Multiples::setLimit(int limit)
+{
+	this->limit = limit;
+}
+
+int Multiples::solve()
+{
+	int total = 0;
+
+	for (int i = 1; i < limit; i++)
+	{
+		if (i % value1 == 0 || i % value2 == 0)
+		{
+			total += i;
+		}
+	}
+
+	return total;
+}
+
+void Multiples::displaySolution()
+{
+	cout << "The solution (total) is " << solve() << endl;
+}
+
+2. ///////////////////
+
+#include <iostream>
+using namespace std;
+
+#include "EvenFibs.h"
+
+int main()
+{
+	EvenFibs ef;
+	ef.setLimit(40);
+	ef.displaySolution();
+}
+
+#pragma once
+class EvenFibs
+{
+private:
+	int limit;
+	int fib(int number);
+
+public:
+	EvenFibs();
+	EvenFibs(int limit);
+	void setLimit(int limit);
+	long long solve();
+	void displaySolution();
+};
+
+#include <iostream>
+using namespace std;
+
+#include "EvenFibs.h"
+
+int EvenFibs::fib(int number)
+{
+	if (number <= 0)
+	{
+		return 0;
+	}
+	if (number <= 1)
+	{
+		return 1;
+	}
+
+	return fib(number - 1) + fib(number - 2);
+}
+
+EvenFibs::EvenFibs()
+{
+	limit = 10;
+}
+
+EvenFibs::EvenFibs(int limit)
+{
+	this->limit = limit;
+}
+
+void EvenFibs::setLimit(int limit)
+{
+	this->limit = limit;
+}
+
+long long int EvenFibs::solve()
+{
+	long long total = 0;
+
+	for (int i = 1; i <= limit; i++)
+	{
+		int result = fib(i);
+		if( result % 2 == 0 )
+		{ 
+			total += (long long)result;
+		}
+	}
+
+	return total;
+}
+
+void EvenFibs::displaySolution()
+{
+	cout << "The solution (total) is " << solve() << endl;
+}
+
+3. ///////////////
+
+// LargestPrime.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+#include "Primes.h"
+#include "Problem.h"
+
+int main()
+{
+
+//	for (int i = 1; i < 20; i++)
+//	{
+//		cout << i << " " << Primes::isPrime(i) << endl;
+//	}
+
+//	Problem p(6008519);
+//	cout << p.solve() << endl;
+
+}
+
+#pragma once
+
+class Primes
+{
+public:
+	static bool isPrime(long long number);
+
+
+};
+
+#include "Primes.h"
+#include "Math.h"
+
+bool Primes::isPrime(long long number)
+{
+	long long limit = (long long)number/2;
+
+	for (long long i = 2; i < limit; i++)
+	{
+		if (number % i == 0)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+#pragma once
+
+class Problem
+{
+private:
+	long long limit;
+
+public:
+	Problem(long long limit = 13195);
+	void setLimit(long long limit);
+	long long getLimit();
+	long long solve();
+	bool isFactor(long long number);
+
+};
+
+#include "Problem.h"
+#include "Primes.h"
+
+Problem::Problem(long long limit)
+{
+	this->limit = limit;
+}
+
+void Problem::setLimit(long long limit)
+{
+	this->limit = limit;
+}
+
+long long Problem::getLimit()
+{
+	return limit;
+}
+
+bool Problem::isFactor(long long number)
+{
+	return limit % number == 0;
+}
+
+long long Problem::solve()
+{
+	long long largestPrime = 2;
+
+	for (long long i = 2; i <= limit; i++)
+	{
+		if (isFactor(i) && Primes::isPrime(i))
+		{
+			largestPrime = i;
+		}
+	}
+
+	return largestPrime;
+}
+
+// ConsoleApplication3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+class Base
+{
+public:
+	void fun()
+	{
+		cout << "fun of Base" << endl;
+	}
+};
+
+class Derived : public Base
+{
+public:
+	void fun()
+	{
+		cout << "fun of Derived" << endl;
+	}
+};
+
+class BasicCar
+{
+public:
+	virtual void start()
+	{
+		cout << "BasicCar started" << endl;
+	}
+};
+
+class AdvancedCar : public BasicCar
+{
+public:
+	void start()
+	{
+		cout << "AdvancedCar started" << endl;
+	}
+};
+
+int main()
+{
+//	Derived d;
+//	d.fun();
+	BasicCar *p = new AdvancedCar();
+	p->start();
+}
+
+
