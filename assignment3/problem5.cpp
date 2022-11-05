@@ -17,15 +17,18 @@ void countNumOfWords()
     fin.open("OUT.TXT");
 
     char ch;
-    int count = 0;
+    int words = 0;
     while (!fin.eof())
     {
         fin.get(ch);
-        // if (ch == ' ')
-        if (isblank(ch))
+        // if it is space, increment word count
+        if (ch == ' ')
         {
-            count++;
+            words++;
         }
     }
-    cout << "Number of blanks present in the file -> " << count << endl;
+    // at eof, all spaces have been counted. Increment words one more time for correct word count
+    words++;
+
+    cout << "Number of words present in the file -> " << words << endl;
 }
