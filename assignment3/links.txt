@@ -1,0 +1,2 @@
+http://www.cppforschool.com/assignment/filetext_1.html
+http://www.cppforschool.com/assignment/filebinary_1.html
