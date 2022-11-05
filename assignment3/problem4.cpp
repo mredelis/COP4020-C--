@@ -3,28 +3,29 @@
 #include <iostream>
 using namespace std;
 
-void readAlphabets();
+void readNumOfBlanks();
 
 int main()
 {
-    readAlphabets();
+    readNumOfBlanks();
     return 0;
 }
 
-void readAlphabets()
+void readNumOfBlanks()
 {
     ifstream fin;
     fin.open("OUT.TXT");
 
     char ch;
-    int cnt = 0;
+    int count = 0;
     while (!fin.eof())
     {
         fin.get(ch);
-        if (isalpha(ch))
+        // if (ch == ' ')
+        if (isblank(ch))
         {
-            cnt++;
+            count++;
         }
     }
-    cout << "Number of alphabets present in the file -> " << cnt << endl;
+    cout << "Number of blanks present in the file -> " << count << endl;
 }
