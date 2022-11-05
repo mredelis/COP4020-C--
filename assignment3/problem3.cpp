@@ -27,4 +27,5 @@ void readAlphabets()
         }
     }
     cout << "Number of alphabets present in the file -> " << cnt << endl;
+    fin.close();
 }

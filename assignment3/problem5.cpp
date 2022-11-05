@@ -31,4 +31,5 @@ void countNumOfWords()
     words++;
 
     cout << "Number of words present in the file -> " << words << endl;
+    fin.close();
 }

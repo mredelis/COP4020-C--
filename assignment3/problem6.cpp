@@ -31,4 +31,5 @@ void countWordThe()
     }
 
     cout << "Number of 'the' as independent word in the file -> " << count << endl;
+    fin.close();
 }

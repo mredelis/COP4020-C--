@@ -29,4 +29,5 @@ void countLines()
     }
 
     cout << "Number of lines not starting with A are -> " << count << endl;
+    fin.close();
 }

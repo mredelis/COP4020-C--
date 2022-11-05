@@ -28,4 +28,5 @@ void readNumOfBlanks()
         }
     }
     cout << "Number of blanks present in the file -> " << count << endl;
+    fin.close();
 }
