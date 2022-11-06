@@ -15,11 +15,11 @@ void Item::Search(int RecNo)
   }
 
   // Move the file pointer to position the file before writing
-  File.seekp((RecNo - 1) * sizeof(Item));
+  File.seekp((RecNo - 2) * sizeof(Item));
 
   File.read((char *)this, sizeof(Item));
   cout << "Item with RecNo = " << RecNo << endl
-       << Ino << " == >" << Item << endl;
+       << Ino << " ==> " << Item << endl;
   File.close();
 }
 
@@ -41,7 +41,7 @@ void Item::Modify(int RecNo)
   cin.getline(Item, 20);
 
   // Move the file pointer to position the file before reading
-  File.seekg((RecNo - 1) * sizeof(Item));
+  File.seekg((RecNo - 2) * sizeof(Item));
 
   File.write((char *)this, sizeof(Item));
   File.close();

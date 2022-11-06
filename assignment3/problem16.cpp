@@ -37,11 +37,11 @@ int main()
   }
 
   // Search Item in position 1 and display its content
-  outItem.Search(1);
+  outItem.Search(2);
 
   // Modify Item in position 1
-  outItem.Modify(1);
-  outItem.Search(1);
+  outItem.Modify(2);
+  outItem.Search(2);
 
   file.close();
 
