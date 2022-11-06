@@ -3,7 +3,7 @@
 #include "Employee.h"
 using namespace std;
 
-// NOTE: to view just the amount of records in the file, comment out all lines excet lines: 32 & 40
+// NOTE: to view just the amount of records in the file, comment out all lines except lines: 32 & 40
 
 int main()
 {
