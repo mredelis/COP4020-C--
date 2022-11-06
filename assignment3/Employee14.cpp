@@ -1,15 +1,23 @@
 #include <iostream>
 #include <fstream>
 #include "Employee14.h"
+using namespace std;
 
-// int Employee14::Countrec()
-// {
-//   fstream File;
-//   // fstream file("STUDENT.DAT", ios::out | ios::in | ios::binary);
-//   File.open("EMP.DAT", ios::binary | ios::in);
-//   __ ___ ____ ___ __          // Statement 1
-//       int Bytes = ___ __ __ _ // Statement 2
-//       int Count = Bytes / sizeof(Item);
-//   File.close();
-//   return Count;
-// }
+int Employee14::Countrec()
+{
+  fstream File;
+  File.open("EMP.DAT", ios::binary | ios::in);
+
+  // Move file pointer to EOF and get current position
+  File.seekg(0, ios::end);
+  int Bytes = File.tellg();
+  int Count = Bytes / sizeof(Employee14);
+  File.close();
+  return Count;
+}
+
+void Employee14::readData(int eno, char *ename)
+{
+  this->Eno = eno;
+  strcpy(this->Ename, ename);
+}
