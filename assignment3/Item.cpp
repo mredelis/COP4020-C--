@@ -18,7 +18,8 @@ void Item::Search(int RecNo)
   File.seekp((RecNo - 1) * sizeof(Item));
 
   File.read((char *)this, sizeof(Item));
-  cout << "" << Ino << " == >" << Item << endl;
+  cout << "Item with RecNo = " << RecNo << endl
+       << Ino << " == >" << Item << endl;
   File.close();
 }
 
@@ -32,8 +33,10 @@ void Item::Modify(int RecNo)
     return;
   }
 
+  cout << "Modify Item with RecNo = " << RecNo << endl;
   cout << "Enter new Ino: ";
   cin >> Ino;
+  cin.ignore();
   cout << "Enter new Item: ";
   cin.getline(Item, 20);
 
