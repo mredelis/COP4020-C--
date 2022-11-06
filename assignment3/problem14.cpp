@@ -1,6 +1,6 @@
 #include <fstream>
 #include <iostream>
-#include "Employee.h"
+#include "Emp.h"
 using namespace std;
 
 // NOTE: to view just the amount of records in the file, comment out all lines except lines: 32 & 40
