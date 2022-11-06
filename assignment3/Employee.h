@@ -35,14 +35,16 @@ class Employee
     char Ename[20];
 
 public:
-    void getdata()
+    // get employee data
+    void getData()
     {
         cout << "Enter Employee Number: ";
         cin >> Eno;
         cout << "Enter Employee Name: ";
         cin >> Ename;
     }
-    void putdata()
+    // display employee data
+    void displayData()
     {
         cout << "Employee Number: " << Eno << endl;
         cout << "Employee Name: " << Ename << endl;
@@ -53,10 +55,10 @@ public:
 
 int Employee::countRecords()
 {
-    fstream file;
-    file.open("EMP.DAT", ios::binary | ios::in);
-    file.seekg(0, ios::end);
-    int bytes = file.tellg();
+    fstream file;                                // create a file object
+    file.open("EMP.DAT", ios::binary | ios::in); // open the file in binary mode for reading
+    file.seekg(0, ios::end);                     // move to the end of the file
+    int bytes = file.tellg();                    // get the current position
     int count = bytes / sizeof(Employee);
     file.close();
     return count;

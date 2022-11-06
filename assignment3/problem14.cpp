@@ -26,7 +26,7 @@ int main()
 
     while (count > 0)
     {
-        employee.getdata();
+        employee.getData();
         file.write(reinterpret_cast<char *>(&employee), sizeof(Employee));
         count--;
     }
@@ -38,7 +38,7 @@ int main()
     while (file.peek() != EOF)
     {
         file.read(reinterpret_cast<char *>(&inEmployee), sizeof(Employee)); // read the next record
-        inEmployee.putdata();                                               // display the record
+        inEmployee.displayData();                                           // display the record
     }
 
     // Third, count the number of records in the file
