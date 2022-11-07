@@ -9,4 +9,5 @@ public:
 
   // Added function to create Employee objects
   void readData(int, char *);
+  void displayData();
 };

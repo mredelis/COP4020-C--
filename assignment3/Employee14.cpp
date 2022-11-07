@@ -21,3 +21,8 @@ void Employee14::readData(int eno, char *ename)
   this->Eno = eno;
   strcpy(this->Ename, ename);
 }
+
+void Employee14::displayData()
+{
+  cout << "Employee Number: " << Eno << " Employee Name: " << Ename << endl;
+}

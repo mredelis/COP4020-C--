@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-  fstream file("EMP.DAT", ios::out | ios::binary);
+  fstream file("EMP.DAT", ios::out | ios::in | ios::binary);
   if (!file)
   {
     cout << "File could not be opened" << endl;
@@ -14,7 +14,7 @@ int main()
   }
 
   // First, write Employee objects to file
-  Employee14 outEmp;
+  Employee14 outEmployee;
   int count;
   int Eno;
   char Ename[20];
@@ -31,13 +31,22 @@ int main()
     cout << "Enter Ename (string): ";
     cin.getline(Ename, 20);
 
-    outEmp.readData(Eno, Ename);
-    file.write(reinterpret_cast<char *>(&outEmp), sizeof(Employee14));
+    outEmployee.readData(Eno, Ename);
+    file.write(reinterpret_cast<char *>(&outEmployee), sizeof(Employee14));
     count--;
   }
 
+  // Employee14 inEmployee;
+  // file.seekp(0);
+
+  // while (file.peek() != EOF)
+  // {
+  //   file.read(reinterpret_cast<char *>(&inEmployee), sizeof(Employee14));
+  //   inEmployee.displayData();
+  // }
+
   // Count records
-  cout << "Number of Employee Records -> " << outEmp.Countrec() << endl;
+  cout << "Number of Employee Records -> " << outEmployee.Countrec() << endl;
 
   file.close();
 
