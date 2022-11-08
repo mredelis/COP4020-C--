@@ -36,15 +36,6 @@ int main()
     count--;
   }
 
-  // Employee14 inEmployee;
-  // file.seekp(0);
-
-  // while (file.peek() != EOF)
-  // {
-  //   file.read(reinterpret_cast<char *>(&inEmployee), sizeof(Employee14));
-  //   inEmployee.displayData();
-  // }
-
   // Count records
   cout << "Number of Employee Records -> " << outEmployee.Countrec() << endl;
 

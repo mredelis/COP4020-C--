@@ -7,12 +7,6 @@ class Employee
     char ENAME[10];
 
 public:
-    // Employee(int eno, char* name)
-    // {
-    //     this->ENO = eno;
-    //     strcpy(this->ENAME, name);
-    // }
-
     void GETIT()
     {
         cout << "Enter employee name: ";
@@ -25,6 +19,6 @@ public:
 
     void SHOWIT()
     {
-        cout << ENO << ENAME << endl;
+        cout << ENO << " " << ENAME << endl;
     }
 };

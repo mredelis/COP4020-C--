@@ -21,7 +21,6 @@ void readNumOfBlanks()
     while (!fin.eof())
     {
         fin.get(ch);
-        // if (ch == ' ')
         if (isblank(ch))
         {
             count++;
