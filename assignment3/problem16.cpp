@@ -39,8 +39,6 @@ int main()
     Stock viewStock;
     viewStock.MakeChoice();
 
-    viewStock.Display();
-
     file.close();
 
     return 0;
