@@ -13,7 +13,7 @@ int main()
         return 1;
     }
 
-    // write Student objects to file
+    // // write Student objects to file
     STUD student;
     int count;
 
