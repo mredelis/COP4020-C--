@@ -25,13 +25,13 @@ public:
     temp.minutes = minutes + t.minutes;
 
     // convert min to hours format if greater than 60
-    while (temp.minutes > 60.0)
+    while (temp.minutes >= 60.0)
     {
       temp.minutes = temp.minutes - 60.0;
       temp.hours++;
     }
     // convert hours to 24 hours format if greater than 24
-    while (temp.hours > 24.0)
+    while (temp.hours >= 24.0)
     {
       temp.hours = temp.hours - 24.0;
     }
