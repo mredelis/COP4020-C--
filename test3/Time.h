@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Part a.
 class Time
 {
 private:
