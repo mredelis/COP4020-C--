@@ -1,7 +1,7 @@
 class CashRegister
 {
 private:
-  int cashOnRegister;
+  int cashOnHand;
 
 public:
   // default amount of cash on the register
@@ -10,27 +10,27 @@ public:
   // set cash on register to a different amount
   CashRegister(int cashIn);
 
-  // Update amount in Register based on $ deposited by customer
-  void updateCashRegister(int amountIn);
   int getCurrentBalance();
+  // Update amount in Register based on $ deposited by customer
+  void acceptAmount(int amountIn);
 };
 
 CashRegister::CashRegister()
 {
-  cashOnRegister = 1000;
+  cashOnHand = 500;
 }
 
 CashRegister::CashRegister(int cashIn)
 {
-  cashOnRegister = cashIn;
+  cashOnHand = cashIn;
 }
 
-void CashRegister::updateCashRegister(int amountIn)
+void CashRegister::acceptAmount(int amountIn)
 {
-  cashOnRegister += amountIn;
+  cashOnHand += amountIn;
 }
 
 int CashRegister::getCurrentBalance()
 {
-  return cashOnRegister;
+  return cashOnHand;
 }

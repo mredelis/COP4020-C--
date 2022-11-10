@@ -1,23 +1,23 @@
 #include "CashRegister.h"
-#include "Dispenser.h"
+#include "DispenserType.h"
 #include <iostream>
 using namespace std;
 
-void showProducts();
-void sellProduct(Dispenser &, CashRegister &);
+void showSelection();
+void sellProduct(DispenserType &, CashRegister &);
 
 int main()
 {
   // initialize vending machine
-  Dispenser candy(100, 2);
-  Dispenser chips(200, 3);
-  Dispenser gum(300, 1);
-  Dispenser cookies(50, 3);
+  DispenserType candy(100, 2);
+  DispenserType chips(200, 3);
+  DispenserType gum(300, 4);
+  DispenserType cookies(50, 3);
 
   CashRegister regCounter;
 
   int ch;
-  showProducts();
+  showSelection();
   cin >> ch;
   while (ch != 5)
   {
@@ -38,14 +38,14 @@ int main()
     default:
       cout << "Invalid selection." << endl;
     }
-    showProducts();
+    showSelection();
     cin >> ch;
   }
 
   return 0;
 }
 
-void showProducts()
+void showSelection()
 {
   cout << "**** Available Items in the Vending Machine ****" << endl;
   cout << "To select an item, enter: " << endl;
@@ -57,19 +57,27 @@ void showProducts()
   cout << "> ";
 }
 
-void sellProduct(Dispenser &product, CashRegister &pCounter)
+void sellProduct(DispenserType &product, CashRegister &pCounter)
 {
   int amt;
   int extraAmt;
 
-  // if there's product type in the dispenser
-  if (product.getNumOfItems() > 0)
+  // if there's product type in the DispenserType
+  if (product.getNoOfItems() > 0)
   {
-    cout << "Deposit " << product.getCost() << " dollars: ";
+    cout << "Item costs " << product.getCost() << " dollars" << endl;
+    cout << "Please deposit " << product.getCost() << " to make the purchase or 0 to cancel the sell: ";
     cin >> amt;
 
     while (amt < product.getCost())
     {
+      // sell is canceled
+      if (amt == 0)
+      {
+        cout << "Sorry to see you go. " << endl;
+        return;
+      }
+
       cout << "Deposit an additional " << product.getCost() - amt << " dollars: ";
       cin >> extraAmt;
       amt += extraAmt;
@@ -77,9 +85,10 @@ void sellProduct(Dispenser &product, CashRegister &pCounter)
 
     if (amt >= product.getCost())
     {
-      pCounter.updateCashRegister(amt);
-      product.doSale();
-      cout << "Sale made successfully" << endl;
+      pCounter.acceptAmount(amt);
+      product.makeSale();
+      cout << "\nSale made successfully\n"
+           << endl;
     }
   }
   else
