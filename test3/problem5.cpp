@@ -80,7 +80,8 @@ void sellProduct(DispenserType &product, CashRegister &pCounter)
             }
             else
             {
-                cout << "Please deposit an additional " << product.getCost() - amount << " dollars to make purchase." << endl;
+                cout << "Please deposit an additional " << product.getCost() - amount
+                     << " dollars to make purchase." << endl;
                 cin >> amount2;
                 amount += amount2;
             }
