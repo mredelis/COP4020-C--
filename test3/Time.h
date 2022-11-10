@@ -19,7 +19,7 @@ public:
     // displays the time in hours and minutes
     void showtime()
     {
-        cout << hours << " hours " << minutes << " minutes" << endl;
+        cout << hours << " hours " << minutes << " minutes " << endl;
     }
 
     // returns the sum of two time objects

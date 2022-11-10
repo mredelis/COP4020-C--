@@ -10,7 +10,7 @@ int main()
     Time t1, t2, t3;
 
     // sets the hours and minutes of the first two times
-    t1.settime(11, 60);
+    t1.settime(11, 55);
     t2.settime(15, 45);
 
     // calls the sum function to add the first two times
